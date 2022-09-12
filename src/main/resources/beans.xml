@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.example.home_practice_springboot.model.Courses" name="courses">
+        <constructor-arg value="Java Book by Mamun vai"/>
+        <constructor-arg value="1"/>
+
+    </bean>
+    <bean class="com.example.home_practice_springboot.model.Address" name="address">
+        <constructor-arg value="GKT House"/>
+        <constructor-arg value="111"/>
+        <constructor-arg value="222"/>
+    </bean>
+
+    <bean name="student1"  class="com.example.home_practice_springboot.model.Student" init-method="init" destroy-method="destroy">
+
+
+     <!--   <constructor-arg index="2"  value="3.5f"/>
+        <constructor-arg index="3" ref="address"/>
+        <constructor-arg index="0" value="101"/>
+        <constructor-arg index="1" value="Golam Kibria Tuhin"/>-->
+
+        <constructor-arg ref="courses"/>
+        <constructor-arg ref="address"/>
+
+    </bean>
+</beans>
