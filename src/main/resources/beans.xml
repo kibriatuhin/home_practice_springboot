@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="com.example.home_practice_springboot.model.Courses" name="courses">
+    <bean class="com.example.home_practice_springboot.model.Courses" id="courses0">
         <constructor-arg value="Java Book by Mamun vai"/>
+        <constructor-arg value="1"/>
+
+    </bean>
+    <bean class="com.example.home_practice_springboot.model.Courses" id="courses1">
+        <constructor-arg value="Java Book by Murad vai"/>
+        <constructor-arg value="1"/>
+
+    </bean>
+    <bean class="com.example.home_practice_springboot.model.Courses" id="courses2">
+        <constructor-arg value="Java Book by TUhin vai"/>
         <constructor-arg value="1"/>
 
     </bean>
@@ -13,17 +23,33 @@
         <constructor-arg value="111"/>
         <constructor-arg value="222"/>
     </bean>
+    <bean id="student2"  class="com.example.home_practice_springboot.model.Student" abstract="true">
+        <property name="courses">
+            <list value-type="com.example.home_practice_springboot.model.Courses">
+                <ref bean="courses0"/>
+            </list>
+        </property>
+    </bean>
 
-    <bean name="student1"  class="com.example.home_practice_springboot.model.Student" init-method="init" destroy-method="destroy">
+    <bean id="student1" parent="student2"  class="com.example.home_practice_springboot.model.Student" c:name="Golam Kibria Tuhin "
+          c:cgpa="3.5f"
+          c:id="101"
+          c:address-ref="address"
+    >
 
 
-     <!--   <constructor-arg index="2"  value="3.5f"/>
-        <constructor-arg index="3" ref="address"/>
+      <!--  <constructor-arg name="cgpa" value="3.5f"/>
+
         <constructor-arg index="0" value="101"/>
         <constructor-arg index="1" value="Golam Kibria Tuhin"/>-->
+        <!--<constructor-arg name="address" ref="address"/>-->
+        <property name="courses" >
+            <list value-type="com.example.home_practice_springboot.model.Courses" merge="true">
+                <ref bean="courses1"/>
+                <ref bean="courses2"/>
+            </list>
+        </property>
 
-        <constructor-arg ref="courses"/>
-        <constructor-arg ref="address"/>
 
     </bean>
 </beans>

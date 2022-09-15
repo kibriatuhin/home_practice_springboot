@@ -3,6 +3,7 @@ package com.example.home_practice_springboot.model;
 import org.springframework.stereotype.Component;
 
 import java.beans.ConstructorProperties;
+import java.util.List;
 
 
 public class Student {
@@ -13,7 +14,7 @@ public class Student {
 
     //dependency injection
     private Address address;
-    private Courses courses;
+    private List<Courses> courses;
 
 
     public Student() {
@@ -21,18 +22,38 @@ public class Student {
 
 
 
-    public Student(int id, String name, float cgpa , Address address) {
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+
+    public List<Courses> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Courses> courses) {
+        this.courses = courses;
+    }
+
+    public Student(int id, String name, float cgpa, Address address) {
         this.id = id;
         this.name = name;
         this.cgpa = cgpa;
-        this.address= address;
-        System.out.println("Student class constructor call..");
+        this.address = address;
+
     }
 
-    public Student(Address address, Courses courses) {
-        this.address = address;
-        this.courses = courses;
-    }
+    /*  public static Student getInstance(Address address, Courses courses) {
+      Student ob = new Student();
+      ob.setAddress(address);
+      ob.setCourses(courses);
+      return ob;
+
+    }*/
 
     public int getId() {
         return id;
@@ -73,6 +94,7 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", cgpa=" + cgpa +
                 ", address=" + address +
+                ", courses=" + courses +
                 '}';
     }
 }

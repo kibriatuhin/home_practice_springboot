@@ -36,12 +36,5 @@ public class Address {
         this.houseNo = houseNo;
     }
 
-    @Override
-    public String toString() {
-        return "Address{" +
-                "roadName='" + roadName + '\'' +
-                ", roadNO=" + roadNO +
-                ", houseNo=" + houseNo +
-                '}';
-    }
+
 }
