@@ -20,7 +20,8 @@ import java.util.Arrays;
 public class HomePracticeSpringBootApplication {
 
     public static void main(String[] args) {
-
+        SpringApplication.run(HomePracticeSpringBootApplication.class,args);
+        System.exit(0);
     }
 
 }
@@ -35,6 +36,8 @@ public class HomePracticeSpringBootApplication {
         Object ob = context.getBean("simple");
         System.out.println(ob);*/
 
+/*ApplicationContext context = new ClassPathXmlApplicationContext("beans4.xml");
+        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);*/
 
 /*ApplicationContext context = new ClassPathXmlApplicationContext("beans3.xml");
         Simple simple = context.getBean(Simple.class);
