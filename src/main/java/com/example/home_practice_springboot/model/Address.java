@@ -1,5 +1,8 @@
 package com.example.home_practice_springboot.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Address {
     private String roadName;
     private int roadNO;

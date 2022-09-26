@@ -20,8 +20,11 @@ import java.util.Arrays;
 public class HomePracticeSpringBootApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HomePracticeSpringBootApplication.class,args);
-        System.exit(0);
+        /*SpringApplication.run(HomePracticeSpringBootApplication.class,args);
+        System.exit(0);*/
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans5.xml");
+        System.out.println(context.getBeanDefinitionCount());
+        System.out.println(context.getBean(Student.class));
     }
 
 }

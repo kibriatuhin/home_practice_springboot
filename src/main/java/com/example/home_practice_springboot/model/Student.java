@@ -1,18 +1,29 @@
 package com.example.home_practice_springboot.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import java.beans.ConstructorProperties;
 import java.util.List;
 
 
+@Component
+@Primary
 public class Student {
+
+
     private int id;
+
     private String name;
+
+
     private float cgpa;
 
 
     //dependency injection
+    @Autowired
     private Address address;
     private List<Courses> courses;
 
