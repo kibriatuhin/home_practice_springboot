@@ -3,6 +3,7 @@ package com.example.home_practice_springboot.model;
 import org.springframework.stereotype.Component;
 
 
+
 public class Courses {
     private String bookName;
     private int bookId;

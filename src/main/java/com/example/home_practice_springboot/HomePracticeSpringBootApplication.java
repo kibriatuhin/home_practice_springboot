@@ -20,15 +20,19 @@ import java.util.Arrays;
 public class HomePracticeSpringBootApplication {
 
     public static void main(String[] args) {
-        /*SpringApplication.run(HomePracticeSpringBootApplication.class,args);
-        System.exit(0);*/
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans5.xml");
+        SpringApplication.run(HomePracticeSpringBootApplication.class,args);
+        System.exit(0);
+      /*  ApplicationContext context = new ClassPathXmlApplicationContext("beans5.xml");
         System.out.println(context.getBeanDefinitionCount());
-        System.out.println(context.getBean(Student.class));
+        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+       // System.out.println(context.getBean(Student.class));*/
+
     }
 
 }
 
+
+/**/
 /*
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.scan("com.example.home_practice_springboot.model","com.example.home_practice_springboot.scope");

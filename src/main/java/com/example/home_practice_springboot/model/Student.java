@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
+import javax.inject.Named;
 import java.beans.ConstructorProperties;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class Student {
 
 
     //dependency injection
-    @Autowired
+
     private Address address;
     private List<Courses> courses;
 

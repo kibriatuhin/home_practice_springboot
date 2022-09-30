@@ -8,6 +8,8 @@ public class Address {
     private int roadNO;
     private int houseNo;
 
+    public Address() {
+    }
 
     public Address(String roadName, int roadNO, int houseNo) {
         this.roadName = roadName;
