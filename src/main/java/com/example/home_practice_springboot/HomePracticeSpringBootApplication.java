@@ -1,16 +1,11 @@
 package com.example.home_practice_springboot;
 
-import com.example.home_practice_springboot.model.Simple;
-import com.example.home_practice_springboot.model.Student;
-import com.example.home_practice_springboot.model.Student2;
-import com.example.home_practice_springboot.model.ThreadScopeTestBean;
-import com.example.home_practice_springboot.service.CommandExecutorService;
+import com.example.home_practice_springboot.model2.Studentt;
+import com.example.home_practice_springboot.model2.ThreadScopeTestbean;
 import org.springframework.beans.factory.config.CustomScopeConfigurer;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
@@ -20,16 +15,33 @@ import java.util.Arrays;
 public class HomePracticeSpringBootApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HomePracticeSpringBootApplication.class,args);
-        System.exit(0);
-      /*  ApplicationContext context = new ClassPathXmlApplicationContext("beans5.xml");
-        System.out.println(context.getBeanDefinitionCount());
-        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
-       // System.out.println(context.getBean(Student.class));*/
+
+
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans6.xml");
+
+        Studentt ob = context.getBean(Studentt.class);
+        System.out.println(ob);
+        //PropertySourcesPlaceholderConfigurer
+
+
+
+
 
     }
 
 }
+  /*String[] names = context.getBeanDefinitionNames();
+        System.out.println(Arrays.toString(names));
+
+        Studentt student = context.getBean("studentt",Studentt.class);
+        System.out.println(student);
+        Studentt student1 = context.getBean("studentt",Studentt.class);
+        System.out.println(student1);*/
+
+    /*    ThreadScopeTestbean testbean = context.getBean(ThreadScopeTestbean.class);
+        System.out.println(testbean);
+        ThreadScopeTestbean testbean1 = context.getBean(ThreadScopeTestbean.class);
+        System.out.println(testbean1);*/
 
 
 /**/
